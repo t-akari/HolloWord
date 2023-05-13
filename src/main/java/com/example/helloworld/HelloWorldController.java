@@ -8,15 +8,10 @@ import java.time.LocalDateTime;
 @RestController
 public class HelloWorldController {
 
-    @GetMapping("/time")
-    public LocalDateTime now() {
-        LocalDateTime now = LocalDateTime.now();
-        return now;
-    }
-
     @GetMapping("/hello")
-    public String hello() {
+    public HelloWorldResponse hello() {
 
-        return "hello world";
+        return new HelloWorldResponse("hello word", LocalDateTime.now());
     }
+
 }
